@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VANGUARD Performance Architecture — Engineered Physical Transformation</title>
+<meta name="description" content="Data-driven body recomposition, movement architecture, and elite nutritional programming. Limited Q4 intake.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D0D0D; --fg:#FAFAFA; --line:#222222; --accent:#CCFF00;
+  --mute:#8A8A85; --panel:#111111;
+  --display:'Oswald','Bebas Neue',Impact,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --sans:'Inter',system-ui,sans-serif;
+  --gutter:clamp(20px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.band{border-top:1px solid var(--line)}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.h2{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.95;letter-spacing:.005em;font-size:clamp(40px,6vw,84px)}
+.acc{color:var(--accent)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:16px 26px;border:1px solid var(--accent);transition:transform .15s,background .15s,color .15s}
+.btn-primary{background:var(--accent);color:#0D0D0D}
+.btn-primary:hover{background:#DDFF4D;transform:translateY(-2px)}
+.btn-ghost{border-color:#3a3a3a;color:var(--fg)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:11px 18px;font-size:12px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:50;background:#0D0D0Df2;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.mark{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.12em}
+.mark i{display:block;width:18px;height:18px;background:var(--fg);clip-path:polygon(0 0,100% 0,50% 100%)}
+.mark small{font-family:var(--mono);font-size:10px;font-weight:400;color:var(--mute);letter-spacing:.14em;border-left:1px solid var(--line);padding-left:12px}
+nav.links{display:flex;gap:34px}
+nav.links a{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#bdbdb8;padding:6px 0;border-bottom:1px solid transparent}
+nav.links a:hover,nav.links a.active{color:var(--accent);border-color:var(--accent)}
+
+/* Hero */
+.hero{padding:clamp(48px,8vw,110px) 0 0}
+.hero-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(32px,5vw,80px);align-items:end}
+.badge{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);padding:9px 14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:34px}
+.pulse{position:relative;width:8px;height:8px;background:var(--accent);border-radius:50%}
+.pulse::after{content:"";position:absolute;inset:-5px;border:1px solid var(--accent);border-radius:50%;animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.005em;font-size:clamp(56px,11.2vw,184px)}
+.hero h1 span{display:block}
+.hero h1 .o{color:transparent;-webkit-text-stroke:2px var(--fg)}
+.hero .sub{max-width:560px;margin:34px 0 38px;font-size:clamp(17px,1.7vw,20px);color:#cfcfca}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.spec{border:1px solid var(--line);background:var(--panel);font-family:var(--mono);font-size:12.5px}
+.spec-h{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--mute);letter-spacing:.1em;text-transform:uppercase;font-size:11px}
+.spec dl{display:grid;grid-template-columns:auto 1fr}
+.spec dt,.spec dd{padding:13px 16px;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--mute);border-right:1px solid var(--line)}
+.spec dd{text-align:right}
+.spec dd b{color:var(--accent);font-weight:500}
+.spec dl>*:nth-last-child(-n+2){border-bottom:0}
+.hero-foot{margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.marquee{display:inline-flex;animation:slide 38s linear infinite;padding:14px 0;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.marquee span{padding:0 28px}
+.marquee span::before{content:"/";color:#444;margin-right:56px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:clamp(28px,4vw,52px) clamp(18px,2.4vw,36px);border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--display);font-weight:700;font-size:clamp(48px,6.4vw,96px);line-height:1;color:var(--accent);letter-spacing:-.01em}
+.stat .n sup{font-size:.4em;vertical-align:top;margin-left:4px;color:var(--fg);letter-spacing:.04em}
+.stat p{margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+
+/* Section head */
+.sec{padding:clamp(64px,9vw,130px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:clamp(36px,5vw,64px);flex-wrap:wrap}
+.sec-head p{max-width:380px;color:#aaa9a3;font-size:15px}
+
+/* Case studies */
+.cases{display:grid;grid-template-columns:1.5fr 1fr;border:1px solid var(--line)}
+.case{padding:clamp(22px,3vw,40px)}
+.case.feat{grid-row:span 2;border-right:1px solid var(--line)}
+.case+.case{border-top:0}
+.case.small+.case.small{border-top:1px solid var(--line)}
+.case-top{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:22px}
+.case-top b{color:var(--fg);font-weight:500}
+.delta{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.delta .big{font-family:var(--display);font-weight:700;font-size:clamp(60px,8vw,120px);line-height:.9;color:var(--accent)}
+.delta .unit{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.tbl{width:100%;border-collapse:collapse;margin:26px 0;font-family:var(--mono);font-size:13px}
+.tbl th,.tbl td{padding:11px 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.tbl th{color:var(--mute);width:38%}
+.tbl td:last-child{text-align:right}
+.tbl td em{font-style:normal;color:var(--mute);padding:0 8px}
+.tbl td strong{color:var(--accent);font-weight:500}
+.chart{margin:10px 0 28px;border:1px solid var(--line);padding:14px 14px 6px}
+.chart svg{width:100%;height:auto;display:block}
+.chart-cap{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase;padding:6px 0 8px}
+blockquote{border-left:2px solid var(--accent);padding-left:18px;font-size:16px;color:#e4e4df}
+blockquote footer{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.06em}
+.verified{color:var(--accent)}
+.case.small .big2{font-family:var(--display);font-weight:700;font-size:48px;line-height:1;letter-spacing:.01em}
+.case.small .big2 small{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--mute);letter-spacing:.1em;margin-left:8px}
+.minis{display:flex;gap:0;border:1px solid var(--line);margin:18px 0 22px}
+.minis div{flex:1;padding:10px 12px;border-right:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.minis div:last-child{border-right:0}
+.minis b{display:block;font-size:15px;color:var(--fg);font-weight:500;letter-spacing:0;margin-top:3px;text-transform:none}
+.minis b i{font-style:normal;color:var(--accent)}
+.note{margin-top:20px;font-family:var(--mono);font-size:11px;color:#6e6e69}
+
+/* Protocol */
+.proto{border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:140px 1.1fr 1fr;gap:clamp(20px,4vw,64px);padding:clamp(30px,4vw,54px) 0;border-bottom:1px solid var(--line);align-items:start}
+.step .no{font-family:var(--display);font-weight:700;font-size:clamp(70px,9vw,132px);line-height:.8;color:transparent;-webkit-text-stroke:1px #4a4a46}
+.step:hover .no{-webkit-text-stroke-color:var(--accent)}
+.step h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(26px,3vw,42px);line-height:1.02}
+.step h3 + p{margin-top:14px;color:#aaa9a3;max-width:480px}
+.step ul{list-style:none;font-family:var(--mono);font-size:13px}
+.step li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);color:#d4d4cf}
+.step li:first-child{border-top:1px solid var(--line)}
+.step li span{color:var(--mute);text-align:right}
+.step li span.acc{color:var(--accent)}
+
+/* Pricing */
+.tiers{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}
+.tier{padding:clamp(26px,3.4vw,48px);display:flex;flex-direction:column}
+.tier+.tier{border-left:1px solid var(--line)}
+.tier.pri{background:var(--panel)}
+.tier .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);display:flex;justify-content:space-between}
+.tier .tag b{color:var(--accent);font-weight:500}
+.tier h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(30px,3.4vw,46px);line-height:1;margin:18px 0 8px}
+.tier .desc{color:#aaa9a3;font-size:15px;min-height:46px}
+.price{display:flex;align-items:baseline;gap:10px;margin:28px 0 6px;font-family:var(--display);font-weight:700;font-size:clamp(56px,6vw,84px);line-height:1}
+.price small{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.minterm{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-bottom:28px}
+.incl{list-style:none;border-top:1px solid var(--line);margin-bottom:28px}
+.incl li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.incl svg{flex:none;width:16px;height:16px;margin-top:4px;stroke:var(--accent);fill:none;stroke-width:2.5;stroke-linecap:square}
+.fit{margin-top:auto;border:1px solid var(--line);padding:14px 16px;font-size:13.5px;color:#bdbdb8;margin-bottom:22px}
+.fit b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:4px;font-weight:500}
+.tier .btn{width:100%}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(32px,6vw,96px)}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(19px,2vw,26px);letter-spacing:.02em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);font-weight:400;color:var(--mute)}
+details[open] summary::after{content:"–";color:var(--accent)}
+details p{padding:0 40px 24px 0;color:#aaa9a3;max-width:640px}
+
+/* Closing CTA */
+.close{border:1px solid var(--line);padding:clamp(32px,5vw,72px);display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+
+/* Footer */
+footer.foot{border-top:1px solid var(--line);padding:56px 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.foot .big{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:.95}
+.foot h4{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.foot ul{list-style:none;font-family:var(--mono);font-size:13px}
+.foot li{padding:5px 0}
+.foot a:hover{color:var(--accent)}
+.legal{border-top:1px solid var(--line);padding-top:24px;font-size:12px;line-height:1.7;color:#6e6e69;display:flex;flex-direction:column;gap:12px}
+.legal .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+
+/* Modal */
+dialog{margin:auto;width:min(680px,94vw);max-height:92vh;background:#0D0D0D;color:var(--fg);border:1px solid #333;padding:0;overflow:auto}
+dialog::backdrop{background:#000000d9}
+.m-head{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.m-head b{color:var(--fg);font-weight:500}
+.x{width:32px;height:32px;border:1px solid var(--line);font-family:var(--mono);color:var(--fg)}
+.x:hover{border-color:var(--accent);color:var(--accent)}
+.prog{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:20px 24px 0}
+.prog i{height:3px;background:var(--line)}
+.prog i.on{background:var(--accent)}
+.m-body{padding:26px 24px 8px}
+.m-body h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(28px,4vw,40px);line-height:1;margin-bottom:8px}
+.m-body .hint{color:#aaa9a3;font-size:14px;margin-bottom:22px}
+.fld{margin-bottom:18px}
+label.l,.legend{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+input[type=text],input[type=email],textarea{width:100%;background:var(--panel);border:1px solid #2c2c2c;color:var(--fg);font:inherit;font-size:15px;padding:13px 14px;border-radius:0}
+textarea{min-height:104px;resize:vertical}
+input:focus,textarea:focus{outline:0;border-color:var(--accent)}
+.opts{display:grid;gap:8px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{display:flex;justify-content:space-between;gap:12px;align-items:center;border:1px solid #2c2c2c;padding:13px 14px;font-size:14.5px;transition:border-color .12s,background .12s}
+.opt span em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--mute)}
+.opt:hover span{border-color:#555}
+.opt input:checked + span{border-color:var(--accent);background:#CCFF0010}
+.opt input:checked + span em{color:var(--accent)}
+.opt input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.err{color:#ff6b57;font-family:var(--mono);font-size:12px;min-height:18px;margin:4px 0 0}
+.m-foot{display:flex;justify-content:space-between;gap:12px;padding:18px 24px 24px}
+.m-foot .btn[hidden]{display:none}
+.res{padding:40px 24px 36px}
+.res h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(32px,5vw,52px);line-height:1}
+.res p{color:#bdbdb8;margin:14px 0 24px;max-width:520px}
+.res .rid{font-family:var(--mono);font-size:12px;color:var(--mute);border:1px solid var(--line);display:inline-block;padding:8px 12px;margin-bottom:24px}
+.res .rid b{color:var(--accent);font-weight:500}
+
+/* Responsive */
+@media (max-width:980px){
+  nav.links{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cases{grid-template-columns:1fr}
+  .case.feat{grid-row:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .step{grid-template-columns:90px 1fr}
+  .step ul{grid-column:1/-1}
+  .tiers{grid-template-columns:1fr}
+  .tier+.tier{border-left:0;border-top:1px solid var(--line)}
+  .faq{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid>div:first-child{grid-column:1/-1}
+}
+@media (max-width:560px){
+  .mark small{display:none}
+  .opts.two{grid-template-columns:1fr}
+  .stat .n{font-size:44px}
+  .minis{flex-direction:column}
+  .minis div{border-right:0;border-bottom:1px solid var(--line)}
+  .minis div:last-child{border-bottom:0}
+  .top .btn-sm{padding:10px 12px;font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .marquee,.pulse::after{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. NAV -->
+<header class="top">
+  <div class="wrap">
+    <a href="#top" class="mark" aria-label="Vanguard Performance Architecture"><i></i>VANGUARD<small>PERF. ARCHITECTURE</small></a>
+    <nav class="links" aria-label="Primary">
+      <a href="#system">System</a>
+      <a href="#results">Client Results</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="btn btn-primary btn-sm" data-apply>Apply for Coaching</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 2. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="badge"><span class="pulse" aria-hidden="true"></span>Only 3 client slots open for Q4</div>
+        <h1><span>Engineered</span><span>Physical</span><span class="o">Transformation</span></h1>
+        <p class="sub">Data-driven body recomposition, movement architecture, and elite nutritional programming.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" data-apply>Start Your Application →</button>
+          <a class="btn btn-ghost" href="#results">View Case Studies</a>
+        </div>
+      </div>
+      <aside class="spec" aria-label="Intake specification">
+        <div class="spec-h"><span>Intake Spec</span><span>Q4 / 2026</span></div>
+        <dl>
+          <dt>Open slots</dt><dd><b>03</b> / 12</dd>
+          <dt>Assessment</dt><dd>Video + force-path review</dd>
+          <dt>Programming</dt><dd>Individual, no templates</dd>
+          <dt>Audit cadence</dt><dd>Weekly, recorded</dd>
+          <dt>Response SLA</dt><dd>&lt; 12h, Mon–Sat</dd>
+          <dt>Application review</dt><dd>48h</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+  <div class="hero-foot" aria-hidden="true">
+    <div class="marquee">
+      <span>Biomechanical assessment</span><span>Metabolic rate tracking</span><span>Flexible macro framework</span><span>Weekly video audits</span><span>Direct WhatsApp access</span><span>Autoregulated loading</span><span>Biomechanical assessment</span><span>Metabolic rate tracking</span><span>Flexible macro framework</span><span>Weekly video audits</span><span>Direct WhatsApp access</span><span>Autoregulated loading</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3. STATS -->
+<section class="band" aria-label="Key metrics">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n"><span data-count="1400" data-suffix="+">1,400+</span></div><p>lbs fat shed · client total</p></div>
+      <div class="stat"><div class="n"><span data-count="98.4" data-dec="1" data-suffix="%">98.4%</span></div><p>Client goal completion</p></div>
+      <div class="stat"><div class="n"><span data-count="10" data-suffix="+">10+</span></div><p>Years elite coaching</p></div>
+      <div class="stat"><div class="n"><span data-count="100" data-suffix="%">100%</span></div><p>Custom protocols</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CASE STUDIES -->
+<section class="sec band" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">/ 02 — Client Results</div><h2 class="h2" style="margin-top:14px">Logged.<br>Not claimed.</h2></div>
+      <p>Every figure below is pulled from the client's tracked data: scale weight, DEXA or calibrated caliper body fat, and logged lifts.</p>
+    </div>
+
+    <div class="cases">
+      <!-- Featured -->
+      <article class="case feat">
+        <div class="case-top"><span>Case <b>#0417</b> · Male · Age 34</span><span>16 weeks</span></div>
+        <div class="delta"><div class="big">−37.0</div><div class="unit">lbs total<br>scale weight</div></div>
+        <table class="tbl">
+          <tr><th>Body weight</th><td>242.0<em>→</em><strong>205.0 lbs</strong></td></tr>
+          <tr><th>Body fat</th><td>27.8%<em>→</em><strong>14.6%</strong></td></tr>
+          <tr><th>Back squat 5RM</th><td>225<em>→</em><strong>315 lbs</strong></td></tr>
+          <tr><th>Deadlift 1RM</th><td>315<em>→</em><strong>455 lbs</strong></td></tr>
+          <tr><th>Avg. daily protein</th><td>Logged 109 / 112 days</td></tr>
+        </table>
+        <div class="chart">
+          <div class="chart-cap"><span>Weight trajectory (lbs)</span><span>Wk 0 → 16</span></div>
+          <svg viewBox="0 0 400 130" role="img" aria-label="Weight decreasing from 242 to 205 pounds over 16 weeks">
+            <g stroke="#222" stroke-width="1"><line x1="0" y1="10" x2="400" y2="10"/><line x1="0" y1="35" x2="400" y2="35"/><line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="85" x2="400" y2="85"/><line x1="0" y1="110" x2="400" y2="110"/></g>
+            <polyline fill="none" stroke="#CCFF00" stroke-width="2.5" stroke-linejoin="miter" points="0,10 50,20.8 100,34.3 150,45.1 200,58.6 250,72.2 300,88.4 350,99.2 400,110"/>
+            <g fill="#0D0D0D" stroke="#CCFF00" stroke-width="2"><rect x="-4" y="6" width="8" height="8"/><rect x="394" y="106" width="8" height="8" transform="translate(-4 0)"/></g>
+            <text x="8" y="28" fill="#8A8A85" font-family="JetBrains Mono,monospace" font-size="10">242.0</text>
+            <text x="352" y="127" fill="#FAFAFA" font-family="JetBrains Mono,monospace" font-size="10">205.0</text>
+          </svg>
+        </div>
+        <blockquote>
+          “The weekly video audits caught a hip shift in my squat that I'd carried for six years. Correcting it added 90 lbs to my 5RM, and the macro framework meant I never once cut a food group.”
+          <footer><span class="verified">✓ VERIFIED</span> · Client #0417 · Software engineer</footer>
+        </blockquote>
+      </article>
+
+      <!-- Small 1 -->
+      <article class="case small">
+        <div class="case-top"><span>Case <b>#0522</b> · Female · Age 29</span><span>12 weeks</span></div>
+        <div class="big2">−19.0 <small>LBS</small></div>
+        <div class="minis">
+          <div>Weight<b>168 → <i>149</i></b></div>
+          <div>Body fat<b>33.1 → <i>24.2%</i></b></div>
+          <div>Hip thrust 1RM<b>185 → <i>295</i></b></div>
+        </div>
+        <blockquote>
+          “First coach who adjusted my calories from actual metabolic data instead of a calculator estimate.”
+          <footer><span class="verified">✓ VERIFIED</span> · Client #0522 · Physician assistant</footer>
+        </blockquote>
+      </article>
+
+      <!-- Small 2 -->
+      <article class="case small">
+        <div class="case-top"><span>Case <b>#0391</b> · Male · Age 41</span><span>20 weeks</span></div>
+        <div class="big2">−23.0 <small>LBS</small></div>
+        <div class="minis">
+          <div>Weight<b>211 → <i>188</i></b></div>
+          <div>Body fat<b>24.6 → <i>15.9%</i></b></div>
+          <div>Bench 1RM<b>205 → <i>265</i></b></div>
+        </div>
+        <blockquote>
+          “Two prior shoulder flare-ups. Zero this block. The assessment redesigned my entire pressing pattern.”
+          <footer><span class="verified">✓ VERIFIED</span> · Client #0391 · Business owner</footer>
+        </blockquote>
+      </article>
+    </div>
+    <p class="note">Results are individual. Client details anonymised with permission. Replace the sample data above with your own verified client records before publishing.</p>
+  </div>
+</section>
+
+<!-- 5. PROTOCOL -->
+<section class="sec band" id="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">/ 03 — The System</div><h2 class="h2" style="margin-top:14px">3-Pillar<br>Coaching Protocol</h2></div>
+      <p>Assessment sets the constraints. Metabolic data sets the inputs. Weekly audits close the feedback loop.</p>
+    </div>
+    <div class="proto">
+      <div class="step">
+        <div class="no">01</div>
+        <div><h3>Biomechanical Assessment &amp; Custom Lifting Split</h3><p>Movement screen from submitted video: joint ranges, bracing, bar path, limb-length leverage. Output is a lifting split built around your structure and recovery capacity.</p></div>
+        <ul>
+          <li>Movement screen <span>8 patterns</span></li>
+          <li>Split frequency <span>3–6 days / wk</span></li>
+          <li>Load method <span>RPE + velocity cues</span></li>
+          <li>Deliverable <span class="acc">Block 1 program, wk 1</span></li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="no">02</div>
+        <div><h3>Metabolic Rate Tracking &amp; Flexible Macro Framework</h3><p>Maintenance calories are calculated from your logged intake and weight trend, not a formula. Macros flex around your schedule, so adherence doesn't depend on a rigid meal plan.</p></div>
+        <ul>
+          <li>TDEE derivation <span>14-day trend</span></li>
+          <li>Macro review <span>Every 7 days</span></li>
+          <li>Diet breaks <span>Programmed</span></li>
+          <li>Deliverable <span class="acc">Live macro targets</span></li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="no">03</div>
+        <div><h3>Weekly 1-on-1 Video Audits &amp; Direct WhatsApp Access</h3><p>Every week you receive a recorded audit of your submitted sets with specific corrections. Between audits, questions go straight to the coach on WhatsApp.</p></div>
+        <ul>
+          <li>Video audit <span>Weekly, recorded</span></li>
+          <li>Messaging <span>WhatsApp, direct</span></li>
+          <li>Response SLA <span>&lt; 12h, Mon–Sat</span></li>
+          <li>Deliverable <span class="acc">Written adjustments</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PRICING -->
+<section class="sec band" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">/ 04 — Coaching Options</div><h2 class="h2" style="margin-top:14px">Two formats.<br>One standard.</h2></div>
+      <p>Both tiers run on the same assessment and data framework. The difference is contact frequency and how much of the process is handled for you.</p>
+    </div>
+    <div class="tiers">
+      <article class="tier pri">
+        <div class="tag"><span>Tier A</span><b>3 slots left</b></div>
+        <h3>1-on-1 Full Elite Program</h3>
+        <p class="desc">Fully custom programming, weekly audits, and priority access to the coach.</p>
+        <div class="price">$950<small>/ month</small></div>
+        <div class="minterm">12-week minimum · Billed monthly</div>
+        <ul class="incl">
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Biomechanical assessment &amp; fully custom lifting split</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Metabolic rate tracking, macro adjustments every 7 days</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Weekly recorded 1-on-1 video audit</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Direct WhatsApp access, priority &lt; 12h response</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Travel, injury &amp; deload programming on demand</li>
+        </ul>
+        <div class="fit"><b>Target fit</b>Competitive or time-poor professionals who want full oversight and will log every session and meal.</div>
+        <button class="btn btn-primary" data-apply="1-on-1 Full Elite Program">Apply for 1-on-1 →</button>
+      </article>
+      <article class="tier">
+        <div class="tag"><span>Tier B</span><b>Limited</b></div>
+        <h3>Hybrid Performance Membership</h3>
+        <p class="desc">Professional program design with structured check-ins. You execute, the data keeps you honest.</p>
+        <div class="price">$390<small>/ month</small></div>
+        <div class="minterm">8-week minimum · Billed monthly</div>
+        <ul class="incl">
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Biomechanical assessment &amp; custom lifting split</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Macro framework with bi-weekly recalibration</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Bi-weekly check-ins with written feedback</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Program refresh every 4 weeks</li>
+          <li><svg viewBox="0 0 16 16"><path d="M2 8.5l4 4 8-9"/></svg>Email support, 48h response</li>
+        </ul>
+        <div class="fit"><b>Target fit</b>Experienced lifters who self-manage well and need expert structure rather than daily oversight.</div>
+        <button class="btn btn-ghost" data-apply="Hybrid Performance Membership">Apply for Hybrid →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec band" id="faq">
+  <div class="wrap faq">
+    <div><div class="eyebrow">/ 05 — FAQ</div><h2 class="h2" style="margin-top:14px">Pre-<br>application<br>answers</h2></div>
+    <div>
+      <details open><summary>How selective is the application?</summary><p>Applications are reviewed manually within 48 hours. Approval depends on goal clarity, training history, budget fit, and your ability to commit to the logging requirements. Roughly one in three applicants is accepted.</p></details>
+      <details><summary>Do I need gym access?</summary><p>You need access to a barbell, dumbbells, and a cable station, or equivalent. Programming is built around your actual equipment, declared at intake.</p></details>
+      <details><summary>What data do I need to submit?</summary><p>Daily morning body weight, food logs, and weekly set videos from key lifts. Optional but useful: a DEXA scan or calibrated body-fat measurement at the start and end of each block.</p></details>
+      <details><summary>Can I pause or leave early?</summary><p>After the minimum term, you can pause or cancel with 14 days' notice. Within the minimum term, fees are non-refundable because assessment and programming are front-loaded.</p></details>
+      <details><summary>Is this suitable with injuries or medical conditions?</summary><p>Disclose them at intake. Programming adapts around known limitations, but it does not replace medical advice. Clearance from your physician may be required before acceptance.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="sec band" style="padding-top:0;border-top:0">
+  <div class="wrap">
+    <div class="close">
+      <div><div class="eyebrow">Q4 intake</div><h2 class="h2" style="margin-top:14px">3 slots.<br>48h review.</h2></div>
+      <button class="btn btn-primary" data-apply>Start Your Application →</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 8. FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="big">Vanguard<br>Performance<br>Architecture</div></div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:apply@vanguardperformance.co">apply@vanguardperformance.co</a></li>
+          <li>Mon–Sat · 08:00–18:00</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">YouTube</a></li>
+          <li><a href="#" rel="noopener">X / Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Disclaimer: Individual results vary and depend on adherence, genetics, starting point, and other factors. Past client outcomes do not guarantee future results. Coaching content is educational and not medical advice. Consult a licensed physician before beginning any exercise or nutrition program. Case study data is shown with client consent; identities anonymised.</p>
+      <div class="row"><span>© 2026 Vanguard Performance Architecture. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- 7. APPLICATION MODAL -->
+<dialog id="apply" aria-labelledby="m-title">
+  <div class="m-head"><span>Application · <b id="m-tier">General intake</b></span><button class="x" id="m-close" aria-label="Close application">✕</button></div>
+  <div class="prog" id="prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <form id="form" novalidate>
+    <div class="m-body" id="steps">
+
+      <section data-step="1" aria-labelledby="m-title">
+        <h3 id="m-title">01 / Current Goals</h3>
+        <p class="hint">Specific and measurable. “Lose 25 lbs and hit a 405 deadlift” beats “get fit”.</p>
+        <div class="fld"><span class="legend">Primary objective</span>
+          <div class="opts two">
+            <label class="opt"><input type="radio" name="goal" value="fat-loss" required><span>Fat loss<em>RECOMP</em></span></label>
+            <label class="opt"><input type="radio" name="goal" value="muscle"><span>Muscle gain<em>MASS</em></span></label>
+            <label class="opt"><input type="radio" name="goal" value="strength"><span>Strength<em>1RM</em></span></label>
+            <label class="opt"><input type="radio" name="goal" value="performance"><span>Sport performance<em>ATHLETIC</em></span></label>
+          </div>
+        </div>
+        <div class="fld"><label class="l" for="target">Target outcome &amp; deadline</label><textarea id="target" name="target" required minlength="10" placeholder="e.g. 215 lbs at 12% body fat by March 1"></textarea></div>
+        <p class="err" role="alert"></p>
+      </section>
+
+      <section data-step="2" hidden>
+        <h3>02 / Training History</h3>
+        <p class="hint">Honest numbers only. They determine your starting volume.</p>
+        <div class="fld"><span class="legend">Consistent training experience</span>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="exp" value="<1" required><span>Under 1 year</span></label>
+            <label class="opt"><input type="radio" name="exp" value="1-3"><span>1–3 years</span></label>
+            <label class="opt"><input type="radio" name="exp" value="3-7"><span>3–7 years</span></label>
+            <label class="opt"><input type="radio" name="exp" value="7+"><span>7+ years</span></label>
+          </div>
+        </div>
+        <div class="fld"><label class="l" for="current">Current program, key lifts &amp; injuries</label><textarea id="current" name="current" required minlength="10" placeholder="Split, frequency, current squat / bench / deadlift, any limitations"></textarea></div>
+        <p class="err" role="alert"></p>
+      </section>
+
+      <section data-step="3" hidden>
+        <h3>03 / Budget</h3>
+        <p class="hint">Monthly investment you can commit to for the full minimum term.</p>
+        <div class="fld">
+          <div class="opts">
+            <label class="opt"><input type="radio" name="budget" value="lt250" required><span>Under $250 / month</span></label>
+            <label class="opt"><input type="radio" name="budget" value="250-500"><span>$250 – $500 / month<em>HYBRID</em></span></label>
+            <label class="opt"><input type="radio" name="budget" value="500-950"><span>$500 – $950 / month<em>HYBRID+</em></span></label>
+            <label class="opt"><input type="radio" name="budget" value="950+"><span>$950+ / month<em>1-ON-1</em></span></label>
+          </div>
+        </div>
+        <p class="err" role="alert"></p>
+      </section>
+
+      <section data-step="4" hidden>
+        <h3>04 / Commitment Level</h3>
+        <p class="hint">Results require data. Confirm what you'll actually deliver each week.</p>
+        <div class="fld"><span class="legend">Weekly training sessions</span>
+          <div class="opts two">
+            <label class="opt"><input type="radio" name="sessions" value="3" required><span>3</span></label>
+            <label class="opt"><input type="radio" name="sessions" value="4"><span>4</span></label>
+            <label class="opt"><input type="radio" name="sessions" value="5"><span>5</span></label>
+            <label class="opt"><input type="radio" name="sessions" value="6"><span>6</span></label>
+          </div>
+        </div>
+        <div class="fld"><span class="legend">Will you log daily weight, food, and weekly set videos?</span>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="logging" value="yes" required><span>Yes, every week without exception</span></label>
+            <label class="opt"><input type="radio" name="logging" value="mostly"><span>Mostly, with some gaps</span></label>
+          </div>
+        </div>
+        <p class="err" role="alert"></p>
+      </section>
+
+      <section data-step="5" hidden>
+        <h3>05 / Contact</h3>
+        <p class="hint">You'll hear back within 48 hours.</p>
+        <div class="fld"><label class="l" for="name">Full name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+        <div class="fld"><label class="l" for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+        <div class="fld"><label class="l" for="wa">WhatsApp (optional)</label><input type="text" id="wa" name="wa" autocomplete="tel" inputmode="tel"></div>
+        <input type="hidden" name="tier" id="tier">
+        <p class="err" role="alert"></p>
+      </section>
+    </div>
+    <div class="m-foot">
+      <button type="button" class="btn btn-ghost btn-sm" id="back" hidden>← Back</button>
+      <span></span>
+      <button type="submit" class="btn btn-primary btn-sm" id="next">Continue →</button>
+    </div>
+  </form>
+
+  <div class="res" id="result" hidden></div>
+</dialog>
+
+<script>
+(function(){
+  /* Nav active state */
+  var links=[].slice.call(document.querySelectorAll('nav.links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id)})}
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){s&&io.observe(s)});
+
+  /* Count-up */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;cio.unobserve(e.target);
+      var el=e.target,end=parseFloat(el.dataset.count),dec=+el.dataset.dec||0,suf=el.dataset.suffix||'';
+      if(reduce)return;
+      var t0=performance.now(),dur=1400;
+      (function tick(t){
+        var p=Math.min(1,(t-t0)/dur),v=end*(1-Math.pow(1-p,3));
+        el.textContent=v.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec})+(p<1?'':suf);
+        if(p<1)requestAnimationFrame(tick);
+      })(t0);
+    });
+  },{threshold:.6});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});
+
+  /* Modal + stepper */
+  var dlg=document.getElementById('apply'),form=document.getElementById('form'),
+      steps=[].slice.call(form.querySelectorAll('[data-step]')),
+      prog=[].slice.call(document.querySelectorAll('#prog i')),
+      back=document.getElementById('back'),next=document.getElementById('next'),
+      result=document.getElementById('result'),tierLbl=document.getElementById('m-tier'),tierIn=document.getElementById('tier'),
+      cur=0,opener=null;
+
+  function show(n){
+    cur=n;
+    steps.forEach(function(s,i){s.hidden=i!==n});
+    prog.forEach(function(p,i){p.classList.toggle('on',i<=n)});
+    back.hidden=n===0;
+    next.textContent=n===steps.length-1?'Submit Application':'Continue →';
+    var f=steps[n].querySelector('input,textarea');f&&f.focus({preventScroll:true});
+    dlg.scrollTop=0;
+  }
+  function valid(n){
+    var sec=steps[n],err=sec.querySelector('.err'),ok=true;err.textContent='';
+    var fields=[].slice.call(sec.querySelectorAll('[required]'));
+    for(var i=0;i<fields.length;i++){
+      var f=fields[i];
+      if(!f.checkValidity()){
+        ok=false;
+        err.textContent=f.type==='radio'?'Select an option to continue.':(f.type==='email'?'Enter a valid email address.':'Complete this field (min. 10 characters where applicable).');
+        if(f.type!=='radio')f.focus();
+        break;
+      }
+    }
+    return ok;
+  }
+  function open(tier,btn){
+    opener=btn||null;
+    form.reset();result.hidden=true;form.hidden=false;
+    document.getElementById('prog').hidden=false;
+    tierLbl.textContent=tier||'General intake';tierIn.value=tier||'';
+    if(!dlg.open)dlg.showModal();
+    show(0);
+  }
+  document.querySelectorAll('[data-apply]').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-apply')||'',b)});
+  });
+  document.getElementById('m-close').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  dlg.addEventListener('close',function(){opener&&opener.focus()});
+  back.addEventListener('click',function(){if(cur>0)show(cur-1)});
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!valid(cur))return;
+    if(cur<steps.length-1){show(cur+1);return}
+    var data=Object.fromEntries(new FormData(form).entries());
+    var ref='VG-'+Math.random().toString(36).slice(2,8).toUpperCase();
+    var qualified=data.budget!=='lt250'&&!(data.logging==='mostly'&&data.budget==='250-500'&&false);
+    /* TODO: send `data` to your backend / CRM (e.g. fetch('/api/apply',{method:'POST',body:JSON.stringify(data)})) */
+    console.log('Application payload',ref,data);
+    form.hidden=true;document.getElementById('prog').hidden=true;result.hidden=false;
+    result.innerHTML=qualified
+      ? '<div class="eyebrow">Application received</div><h3 style="margin-top:12px">Under review</h3><p>Thanks, '+esc(data.name.split(' ')[0])+'. Your application is in the Q4 queue. If your profile fits, you will get a reply at <b>'+esc(data.email)+'</b> within 48 hours with next steps.</p><div class="rid">REF <b>'+ref+'</b></div><br><button class="btn btn-primary btn-sm" id="done">Close</button>'
+      : '<div class="eyebrow">Application received</div><h3 style="margin-top:12px">Not a fit for Q4</h3><p>Current coaching tiers start above your stated budget, so we cannot offer a slot this quarter. Your details are on the waitlist, and you will be notified if a lower-cost format opens.</p><div class="rid">REF <b>'+ref+'</b></div><br><button class="btn btn-ghost btn-sm" id="done">Close</button>';
+    document.getElementById('done').addEventListener('click',function(){dlg.close()});
+  });
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+})();
+</script>
+</body>
+</html>
